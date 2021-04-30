@@ -40,3 +40,19 @@
 .done{
   text-decoration: line-through;
 }
+
+
+body{
+  background-color: rgb(160, 7, 83);
+}
+
+
+
+.modal-content{
+  margin: 280px 10px 10px 20px ;
+}
+
+
+.sizee {
+  font-size: 10px !important;
+}

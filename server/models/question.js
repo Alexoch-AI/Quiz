@@ -4,8 +4,7 @@ pluralize(null);
 
 const questionSchema = new Schema({
   theme: String,
-  questionText: String,
-  answer: String,
+  question: Object
 
 })
 const Question = model('Question', questionSchema)

@@ -19,7 +19,7 @@ function Header() {
                 <>
                   <li className="nav-link active" aria-current="page">
                     <Link className="nav-link active" aria-current="page" to="/">
-                      Моя игра
+                      Главная
                     </Link>
                   </li>
                   <li className="nav-link active" aria-current="page">
@@ -27,9 +27,11 @@ function Header() {
                       Личный кабинет
                     </Link>
                   </li>
-                  <li className="nav-link active" aria-current="page">
-                      <button onClick={logoutHandler}>Выйти</button>
-                  </li>
+                 
+                  <li className="nav-link active" aria-current="page" type="button"  onClick={logoutHandler}>
+                    Выйти
+                    </li>
+                 
                 </>
                 :
                 <>
