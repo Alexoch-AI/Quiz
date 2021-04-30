@@ -5,7 +5,7 @@ import Main from './components/Main/Main';
 import Footer from './components/Footer/Footer';
 import Login from './components/SignIn/SignIn';
 import Registarion from './components/Registration/Registration';
-
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
