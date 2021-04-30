@@ -5,7 +5,7 @@ import { useState } from 'react';
 import { Modal, Button } from 'react-bootstrap'
 
 
-const Theme = () => {
+const Theme = ({quest}) => {
 
 
   const [show, setShow] = useState(false);
@@ -22,11 +22,11 @@ const Theme = () => {
       <div className="container">
         <div className="row">
 
-          <div className="col-md-2 Services-tab item">
+          <div className=" col-md-2 Services-tab item">
             <div className="folded-corner service_tab_1">
               <div className="text"> <i className="fa fa-image fa-5x fa-icon-image"></i>
                 <p className="item-title">
-                  <h3> Animals</h3>
+                  <h6> {quest?.theme}</h6>
 
 
                 </p>

@@ -65,8 +65,7 @@ app.use("/item", postRouter);
 
 app.get('/questions',async (req, res) => {
   let allthequestions = await Question.find()
-
-  console.log(allthequestions, '-----');
+  console.log(allthequestions)
   res.json(allthequestions);
 })
 
@@ -81,7 +80,7 @@ app.listen(PORT, () => {
       useFindAndModify: false,
     },
     () => {
-      console.log("Дальше бога нет");
+      console.log("Дальше бога нет", PORT);
     }
     );
   });

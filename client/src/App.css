@@ -51,3 +51,8 @@ body{
 .modal-content{
   margin: 280px 10px 10px 20px ;
 }
+
+
+.sizee {
+  font-size: 10px !important;
+}

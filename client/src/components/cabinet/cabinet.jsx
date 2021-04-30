@@ -5,15 +5,6 @@ import { Link } from "react-router-dom";
 
 function Cabinet() {
 
-  const [questions, setQuestions] = useState([])
-
-  useEffect(() => {
-    fetch('http://localhost:3000/questions')
-      .then(res => res.json())
-      .then(questsFromServer => setQuestions(questsFromServer))
-      .then(console.log(questions))
-  }, [])
-  
 
   return (
     <div className='d-flex justify-content-center mt-5' >
