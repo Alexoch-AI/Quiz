@@ -69,6 +69,19 @@ app.get('/questions',async (req, res) => {
   res.json(allthequestions);
 })
 
+app.post('/answer', async (req,res) => {
+  const {answer, i, them} = req.body
+  console.log(answer)
+  const findedQuestion = await Question.findOne({theme: them.quest.theme})
+  console.log((i/100)-1, 'THEM');
+  const trueone = findedQuestion.question[(i/100)-1].answer
+  console.log(findedQuestion.question[(i/100)-1]);
+  if (answer.toLowerCase() === trueone.toLowerCase()) {
+    return res.sendStatus(200)
+  } 
+  return res.sendStatus(400)
+})
+
 app.listen(PORT, () => {
   console.log(`Спаси и сохрани`);
   connect(
