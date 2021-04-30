@@ -40,3 +40,7 @@
 .done{
   text-decoration: line-through;
 }
+
+.row{
+  margin-top: -32px;
+}
