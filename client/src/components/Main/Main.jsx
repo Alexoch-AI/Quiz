@@ -1,26 +1,43 @@
 import React from "react";
-import {Container,Row,Col} from 'react-bootstrap'
-import Theme from "../Theme/Theme";
-
-
-
-
-
+import Cabinet from '../cabinet/cabinet'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from "react-router-dom";
 function Main() {
   return (
-    <div className='board'>
-      <Container>
-        <Row>
-          <Col><Theme /></Col>
-        </Row>
-        <Row>
-          <Col><Theme /></Col>
-        </Row>
-        <Row>
-          <Col><Theme /></Col>
-        </Row>
-      </Container>
-    </div>
+    <>
+      <div>
+        <div className='board'>
+          <Container>
+            <Row>
+              <Col><Theme /></Col>
+            </Row>
+            <Row>
+              <Col><Theme /></Col>
+            </Row>
+            <Row>
+              <Col><Theme /></Col>
+            </Row>
+          </Container>
+        </div>
+        <Router>
+          <Switch>
+            <Route exact path="/">
+              <Cabinet />
+            </Route>
+            {/* <Route exact path="/signup"> */}
+            {/* <SignupForm users={users} /> */}
+            {/* </Route> */}
+            {/* <Route exact path="/notepads"> */}
+            {/* <Notepad notes={notes} /> */}
+            {/* </Route> */}
+          </Switch>
+
+        </Router>
+      </div>
+    </>
   );
 }
 
