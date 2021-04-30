@@ -8,11 +8,12 @@ function Cabinet() {
   const [questions, setQuestions] = useState([])
 
   useEffect(() => {
-    fetch('http://localhost:3001/questions')
+    fetch('http://localhost:3000/questions')
       .then(res => res.json())
       .then(questsFromServer => setQuestions(questsFromServer))
+      .then(console.log(questions))
   }, [])
-  console.log(questions);
+  
 
   return (
     <div className='d-flex justify-content-center mt-5' >
