@@ -3,7 +3,7 @@ import Header from './components/Header/Header';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Main from './components/Main/Main';
 import Footer from './components/Footer/Footer';
-import Login from './components/SignIn/SignIn';
+import Login from './components/Login/Login';
 import Registarion from './components/Registration/Registration';
 
 
