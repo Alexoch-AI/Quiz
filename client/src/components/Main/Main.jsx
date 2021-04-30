@@ -1,10 +1,17 @@
 import React from "react";
 import Cabinet from '../cabinet/cabinet'
+import {Container,Row,Col} from 'react-bootstrap'
 import {
   BrowserRouter as Router,
   Switch,
   Route,
 } from "react-router-dom";
+import Theme from "../Theme/Theme";
+
+
+
+
+
 function Main() {
   return (
     <>
