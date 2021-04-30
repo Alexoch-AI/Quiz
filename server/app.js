@@ -6,6 +6,7 @@ const session = require("express-session");
 const cors = require("cors");
 
 const User = require("./models/user.model");
+const Question = require('./models/question')
 
 const indexRouter = require("./routes/indexRouter");
 const userRouter = require("./routes/userRouter");
@@ -63,7 +64,9 @@ app.use("/user", userRouter);
 app.use("/item", postRouter);
 
 app.get('/questions',async (req, res) => {
-  const allthequestions = await Question.find()
+  let allthequestions = await Question.find()
+
+  console.log(allthequestions, '-----');
   res.json(allthequestions);
 })
 
@@ -80,5 +83,6 @@ app.listen(PORT, () => {
     () => {
       console.log("Дальше бога нет");
     }
-  );
-});
+    );
+  });
+  
