@@ -4,14 +4,14 @@ import { useState } from 'react';
 import { Modal, Button } from 'react-bootstrap'
 
 
-const Elem = ({ text, i, them }) => {
+const Elem = ({ text, i, them, id }) => {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
 
   const [input, setInput] = useState('')
-
+  
   const inputHandler = (e) => {
     setInput(e.target.value)
   }
@@ -26,10 +26,17 @@ const Elem = ({ text, i, them }) => {
       },
       body: JSON.stringify({
         answer: input,
+        text,
         i,
         them
       })
     })
+    if (response.status === 200) {
+      alert('ШУЕ')
+    } 
+    if (response.status === 400) {
+      alert('НЕ ШУЕ')
+    }
 
   }
 
