@@ -3,8 +3,6 @@ const express = require("express");
 const { connect } = require("mongoose");
 const MongoStore = require("connect-mongo");
 const session = require("express-session");
-const hbs = require("hbs");
-const path = require("path");
 const cors = require("cors");
 
 const User = require("./models/user.model");
@@ -20,11 +18,10 @@ const DB_NAME = process.env.DB_NAME;
 const DB_HOST = process.env.DB_HOST;
 const secretKey = process.env.secretKey;
 
-app.set("cookieName", "myCoocka");
+app.set("cookieName", "Cokz");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-hbs.registerPartials(path.join(process.cwd(), "views", "partials"));
 
 app.use(
   session({
@@ -55,7 +52,7 @@ app.use(async (req, res, next) => {
 });
 
 app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', 'http://localhost:3002');
+  res.header('Access-Control-Allow-Origin', 'http://localhost:3001');
   res.header('Access-Control-Allow-Credentials', 'true');
   res.header('Access-Control-Allow-Headers', 'Content-Type');
   next();

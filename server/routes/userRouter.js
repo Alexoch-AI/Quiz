@@ -5,7 +5,6 @@ const User = require("../models/user.model");
 const checkSign = require("../middleware/checkSign");
 
 router.post("/registration", async (req, res) => {
-  console.log(req.body);
   const { name, email, password } = req.body;
   if (name && email && password) {
     const hashPass = await bcrypt.hash(password, 10);
@@ -17,31 +16,31 @@ router.post("/registration", async (req, res) => {
     req.session.user = {
       id: newUser._id,
     };
-    return res.sendStatus(200);
+    return res.json(newUser).status(200);
   }
   res.sendStatus(404);
 });
 
-router.get("/signout", (req, res) => {
+router.get("/logout", (req, res) => {
+  console.log('logout')
   req.session.destroy(() => {
     res.clearCookie(req.app.get("cookieName"));
-    res.redirect("/");
+    res.sendStatus(200);
   });
 });
 
 router.post("/login", async (req, res) => {
   const { email, password } = req.body;
+  console.log(req.body)
   if (email && password) {
     const currentUser = await User.findOne({ email });
     if (currentUser && (await bcrypt.compare(password, currentUser.password))) {
       req.session.user = {
         id: currentUser._id,
       };
-      console.log("login!");
-      console.log(currentUser)
       return res.json(currentUser);
     }
-    return res.sendStatus(300);
+    return res.sendStatus(200);
   }
   return res.sendStatus(400);
 });
