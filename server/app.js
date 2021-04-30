@@ -65,6 +65,11 @@ app.use("/", indexRouter);
 app.use("/user", userRouter);
 app.use("/item", postRouter);
 
+app.get('/questions',async (req, res) => {
+  const allthequestions = await Question.find()
+  res.json(allthequestions);
+})
+
 app.listen(PORT, () => {
   console.log(`Спаси и сохрани`);
   connect(
